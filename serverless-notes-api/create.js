@@ -13,7 +13,7 @@ export function main(event, context, callback) {
   const data = JSON.parse(event.body)
 
   const params = {
-    TableName: 'notes',
+    TableName: 'serverless-notes',
     // 'Item' contains the attributes of the item to be created
     // - 'userId': user identites are federated through the
     //             Cognito Identity Pool. we will use the identity
