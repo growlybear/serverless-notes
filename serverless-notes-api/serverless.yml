@@ -100,6 +100,19 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  # defines an http api endpoint that calls the main function in update.js
+  # - path: url path is /notes
+  # - method: GET request
+  update:
+    handler: update.main
+    events:
+      - http:
+          path: serverless-notes/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
