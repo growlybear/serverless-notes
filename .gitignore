@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# ignore build directory for webpack
+# NOTE not sure if this is the right thing to do ...
+.webpack
