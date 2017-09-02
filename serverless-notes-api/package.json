@@ -1,0 +1,11 @@
+{
+  "name": "serverless-notes-api",
+  "version": "1.0.0",
+  "description": "API for serverless-notes application",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Allan <michaelallan@optushome.com.au>",
+  "license": "ISC"
+}
