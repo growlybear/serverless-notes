@@ -64,13 +64,27 @@ functions:
   # - path: url path is /notes
   # - method: POST request
   # - cors: enabled CORS for in-browser api call
-  # - authorizer: autheenticate using the AWS IAM role
+  # - authorizer: authenticate using the AWS IAM role
   create:
     handler: create.main
     events:
       - http:
           path: serverless-notes
           method: post
+          cors: true
+          authorizer: aws_iam
+
+  # defines an http api endpoint that calls the main function in get.js
+  # - path: url path is /notes/{id}
+  # - method: GET request
+  # - cors: enabled CORS for in-browser api call
+  # - authorizer: authenticate using the AWS IAM role
+  get:
+    handler: get.main
+    events:
+      - http:
+          path: serverless-notes/{id}
+          method: get
           cors: true
           authorizer: aws_iam
 #      - s3: ${env:BUCKET}
