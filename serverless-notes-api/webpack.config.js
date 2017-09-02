@@ -1,6 +1,6 @@
 var glob = require('glob')
 var path = require('path')
-var nodeExternals = require('webpack')
+var nodeExternals = require('webpack-node-externals')
 
 // required for create-react-app babel transform
 process.env.NODE_ENV = 'production'
@@ -37,7 +37,9 @@ module.exports = {
   },
   // need this output block as we are going to create
   // multiple api's with a js file for each
-  libraryTarget: 'commonjs',
-  path: path.join(__dirname, '.webpack'),
-  filename: '[name].js'
+  output: {
+    libraryTarget: 'commonjs',
+    path: path.join(__dirname, '.webpack'),
+    filename: '[name].js'
+  }
 }
