@@ -87,6 +87,19 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+  # defines an http api endpoint that calls the main function in list.js
+  # - path: url path is /notes
+  # - method: GET request
+  list:
+    handler: list.main
+    events:
+      - http:
+          path: serverless-notes
+          method: get
+          cors: true
+          authorizer: aws_iam
+
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
